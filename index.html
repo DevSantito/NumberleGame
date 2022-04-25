@@ -2,25 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Número secreto</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./src/styles.css" />
+    <title>Number Guessing Game</title>
 </head>
 
 <body>
     <main>
-        <h1>Adivina el número secreto</h1>
-        <form name="number">
-            <input type="text" autocomplete=off maxlength="1" required id="num1" name="number1" onkeyup="focus_next(this,document.number.number2)">
-            <input type="text" autocomplete=off maxlength="1" required id="num2" name="number2" onkeyup="focus_next(this,document.number.number3)">
-            <input type="text" autocomplete=off maxlength="1" required id="num3" name="number3" onkeyup="focus_next(this,document.number.number4)">
-            <input type="text" autocomplete=off maxlength="1" required id="num4" name="number4">
-            <input type="hidden" id="btn" type="submit">
-        </form>
-        <div id="answer"></div>
+        <h1>Guess The Number</h1>
+        <form id="input"></form>
+        <article id="attempts"></article>
     </main>
-    <script src="script.js"></script>
+    <script type="text/javascript" src="./src/index.js"></script>
 </body>
 
 </html>
