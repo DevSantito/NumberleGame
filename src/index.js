@@ -12,7 +12,7 @@ makeAttemptList = (htmlElement) => {
 generateInput = (size, htmlElement) => {
   let html = "";
   for (let i = 0; i < size; i++) {
-    html += `<input type="number" id="num${i}" name="number${i}" onkeypress="if(this.value.length>1) return false;" required>`;
+    html += `<input type="number" id="num${i}" name="number${i}" onKeyUp="if(this.value>10){this.value='';}else if(this.value<0){this.value='0';}" required>`;
   }
   html += `<br><input type="submit" value="Guess">`;
 
