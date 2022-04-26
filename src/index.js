@@ -9,10 +9,11 @@ makeAttemptList = (htmlElement) => {
   return attemptList;
 };
 
+
 generateInput = (size, htmlElement) => {
   let html = "";
   for (let i = 0; i < size; i++) {
-    html += `<input type="number" id="num${i}" name="number${i}" onKeyUp="if(this.value>10){this.value='';}else if(this.value<0){this.value='0';}" required>`;
+    html += `<input type="number" id="num${i}" onKeyUp="if(this.value > 9){this.value = Number(String(this.value)[0])}else if(this.value < 0){this.value = Number(String(this.value)[1]);}" required>`;
   }
   html += `<br><input type="submit" value="Guess">`;
 
@@ -38,7 +39,7 @@ generateAttemptHistory = (attempt, secret) => {
   let size = attempt.length;
 
   for (let i = 0; i < size; i++) {
-    if (secret[i] === +attempt[i]) {
+    if (secret[i] == +attempt[i]) {
       html += `<input type="number" style="background-color:${green};" value="${attempt[i]}" readonly>`;
     } else if (secret.includes(+attempt[i])) {
       html += `<input type="number" style="background-color:${yellow};" value="${attempt[i]}" readonly>`;
