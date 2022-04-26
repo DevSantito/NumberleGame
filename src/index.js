@@ -57,8 +57,11 @@ const input = document.getElementById("input");
 
 generateInput(5, input);
 
-generateSecretCode = (l, max) =>
-  Array.from({ length: l }, () => Math.floor(Math.random() * max));
+generateSecretCode = (l, max) => {
+  let numbers = [...Array(max).keys()];
+  for(var j, x, i = numbers.length; i; j = parseInt(Math.random() * i), x = numbers[--i], numbers[i] = numbers[j], numbers[j] = x);
+  return numbers.slice(l);
+}
 
 let secretCode = generateSecretCode(5, 10);
 
@@ -71,3 +74,4 @@ game = (event) => {
 };
 
 input.addEventListener("submit", game);
+
